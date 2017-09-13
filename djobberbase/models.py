@@ -295,7 +295,7 @@ class JobStat(models.Model):
     else:
         job = models.ForeignKey(Job)
     created_on = models.DateTimeField(default=datetime.datetime.now())
-    ip = models.IPAddressField()
+    ip = models.GenericIPAddressField()
     stat_type = models.CharField(max_length=1, choices=STAT_TYPES)
     description = models.CharField(_('Description'), max_length=250)
 
